@@ -77,11 +77,6 @@ public class Player : MonoBehaviour
                 Debug.Log(found.name + " found");
 
                 found.GetComponent<Items>().DoSomething();
-                if (found.GetComponent<Items>() == null)
-                    Debug.Log("t null mdr");
-
-
-                //found.GetComponent<Banana>().DoSomething();
             }
         }
     }

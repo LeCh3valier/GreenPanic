@@ -773,8 +773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   banana: {fileID: 2601035955551097476, guid: 4adbe62f3d5ee4e42b30ea61d1a93eef, type: 3}
-  spawnDelay: 1
-  spawnTime: 5
+  spawnDelay: 100000
+  spawnTime: 0
 --- !u!136 &1602173597
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1602173595}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -1020,6 +1020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabed: 0
   moveSpeed: 0
+  points: []
 --- !u!135 &1951438560
 SphereCollider:
   m_ObjectHideFlags: 0

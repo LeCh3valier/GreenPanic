@@ -46,7 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabed: 0
-  moveSpeed: 0.001
+  moveSpeed: 0.1
+  points:
+  - {x: 0, y: 0, z: 0}
+  - {x: 3, y: 3, z: 3}
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &2605022023021957347
 GameObject:
   m_ObjectHideFlags: 0
