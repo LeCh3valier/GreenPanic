@@ -214,10 +214,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
-  sourceProjectPath: 
-  sourceBankPath: Build
+  HasSourceProject: 1
+  HasPlatforms: 1
+  sourceProjectPath: Fmod/GreenPanic Fmod.fspro
+  sourceBankPath: Fmod/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
