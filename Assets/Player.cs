@@ -44,8 +44,26 @@ public class Player : MonoBehaviour
             transform.forward = rb.velocity;
         }
 
-
+        // find one interactable object in scene
         if (Input.GetButton(interactButton))
-            Debug.Log("INteract player " + playerNumber);
+        {
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Interactable");
+            GameObject found = null;
+            float range = 0.0f;
+
+            foreach (GameObject go in gameObjects)
+                if (found == null || (go.transform.position - transform.position).magnitude < range)
+                {
+                    found = go;
+                    range = (go.transform.position - transform.position).magnitude;
+                }
+
+            if (found == null)
+                Debug.Log("nothing");
+            else
+                Debug.Log(found.name + " found");
+
+
+        }
     }
 }
