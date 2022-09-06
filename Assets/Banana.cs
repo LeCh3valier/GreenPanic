@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Banana : MonoBehaviour
+public class Banana : Items
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void DoSomething() 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Banana used !");
     }
 }

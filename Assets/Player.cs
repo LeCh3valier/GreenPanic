@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     private float moveSpeed = 1.0f;
 
     [SerializeField]
-    private int playerNumber = 1;
+    private bool player2 = false;
 
     [SerializeField]
-    private float angle = 360.0f;
+    private float angle = 45.0f;
     [SerializeField]
-    private float grabRange = 1.0f;
+    private float grabRange = 2.0f;
 
     private Rigidbody rb = null;
 
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(playerNumber == 2)
+        if(player2)
         {
             verticalAxis += "_2";
             horizontalAxis += "_2";
@@ -55,19 +55,31 @@ public class Player : MonoBehaviour
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Interactable");
             GameObject found = null;
 
+            float minRange = grabRange;
+
             foreach (GameObject go in gameObjects)
-                if ((go.transform.position - transform.position).magnitude < grabRange &&
+            {
+                float range = (go.transform.position - transform.position).magnitude;
+
+                if (range < minRange &&
                     Vector3.Angle(transform.forward, go.transform.position - transform.position) < angle)
                 {
-                    Debug.Log("range : " + (go.transform.position - transform.position).magnitude);
-                    Debug.Log("angle : " + Vector3.Angle(transform.forward, go.transform.position - transform.position));
                     found = go;
+                    minRange = range;
                 }
+            }
 
             if (found == null)
-                Debug.Log("nothing");
+                Debug.Log("nothing grabed");
             else
-                Debug.Log(found.name + " found");
+            {
+                //Debug.Log(found.name + " found");
+
+                found.GetComponent<Items>().DoSomething();
+
+                //Event truc = found.GetComponent<>();
+                //truc.Use();
+            }
         }
     }
 }
