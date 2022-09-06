@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody rb = null;
-
     [SerializeField]
     private float moveSpeed = 1.0f;
 
     [SerializeField]
-    private string verticalAxis = "Vertical";
+    private int playerNumber = 1;
 
-    [SerializeField]
+    private Rigidbody rb = null;
+
+    //Custom inputs
+    private string verticalAxis = "Vertical";
     private string horizontalAxis = "Horizontal";
+    private string interactButton = "Interact";
 
     // Start is called before the first frame update
     void Start()
     {
+        if(playerNumber == 2)
+        {
+            verticalAxis += "_2";
+            horizontalAxis += "_2";
+            interactButton += "_2";
+        }
+
         rb = GetComponent<Rigidbody>();
     }
 
@@ -28,6 +37,7 @@ public class Player : MonoBehaviour
         float mV = Input.GetAxis(verticalAxis);
         rb.velocity = new Vector3(mH * moveSpeed, rb.velocity.y, mV * moveSpeed);
 
-        //Debug.Log("Axis :"+ mH.ToString());
+        if (Input.GetButton(interactButton))
+            Debug.Log("INteract player " + playerNumber);
     }
 }

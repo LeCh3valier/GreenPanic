@@ -158,7 +158,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &420343907
 MonoBehaviour:
@@ -173,8 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  verticalAxis: Vertical
-  horizontalAxis: Horizontal
+  playerNumber: 1
 --- !u!65 &420343908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -564,7 +563,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &1811302356
 MonoBehaviour:
@@ -579,8 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  verticalAxis: Vertical_2
-  horizontalAxis: Horizontal_2
+  playerNumber: 2
 --- !u!65 &1811302357
 BoxCollider:
   m_ObjectHideFlags: 0
