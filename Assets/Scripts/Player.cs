@@ -70,15 +70,18 @@ public class Player : MonoBehaviour
             }
 
             if (found == null)
-                Debug.Log("nothing grabed");
+                return;
+                //Debug.Log("nothing grabed");
             else
             {
-                //Debug.Log(found.name + " found");
+                Debug.Log(found.name + " found");
 
                 found.GetComponent<Items>().DoSomething();
+                if (found.GetComponent<Items>() == null)
+                    Debug.Log("t null mdr");
 
-                //Event truc = found.GetComponent<>();
-                //truc.Use();
+
+                //found.GetComponent<Banana>().DoSomething();
             }
         }
     }
