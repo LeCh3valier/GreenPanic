@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int playerNumber = 1;
 
+    [SerializeField]
+    private float angle = 360.0f;
+    [SerializeField]
+    private float grabRange = 1.0f;
+
     private Rigidbody rb = null;
 
     //Custom inputs
@@ -44,26 +49,25 @@ public class Player : MonoBehaviour
             transform.forward = rb.velocity;
         }
 
-        // find one interactable object in scene
+        // Find or not one interactable object in scene
         if (Input.GetButton(interactButton))
         {
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Interactable");
             GameObject found = null;
-            float range = 0.0f;
 
             foreach (GameObject go in gameObjects)
-                if (found == null || (go.transform.position - transform.position).magnitude < range)
+                if ((go.transform.position - transform.position).magnitude < grabRange &&
+                    Vector3.Angle(transform.forward, go.transform.position - transform.position) < angle)
                 {
+                    Debug.Log("range : " + (go.transform.position - transform.position).magnitude);
+                    Debug.Log("angle : " + Vector3.Angle(transform.forward, go.transform.position - transform.position));
                     found = go;
-                    range = (go.transform.position - transform.position).magnitude;
                 }
 
             if (found == null)
                 Debug.Log("nothing");
             else
                 Debug.Log(found.name + " found");
-
-
         }
     }
 }
