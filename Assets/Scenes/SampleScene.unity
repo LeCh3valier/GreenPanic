@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407c93292e6eeb748bb2bae2c13db286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   playerNumber: 1
 --- !u!65 &420343908
 BoxCollider:
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407c93292e6eeb748bb2bae2c13db286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   playerNumber: 2
 --- !u!65 &1811302357
 BoxCollider:

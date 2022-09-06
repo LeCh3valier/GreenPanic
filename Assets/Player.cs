@@ -33,9 +33,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Move
         float mH = Input.GetAxis(horizontalAxis);
         float mV = Input.GetAxis(verticalAxis);
         rb.velocity = new Vector3(mH * moveSpeed, rb.velocity.y, mV * moveSpeed);
+
+        // Turn
+        if(rb.velocity != Vector3.zero)
+        {
+            transform.forward = rb.velocity;
+        }
+
 
         if (Input.GetButton(interactButton))
             Debug.Log("INteract player " + playerNumber);
