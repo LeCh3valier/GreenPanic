@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Interactable
   - Trash
+  - Object_1
+  - Machine_P1
+  - Machine_P2
+  - Slow
   layers:
   - Default
   - TransparentFX
