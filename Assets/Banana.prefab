@@ -51,7 +51,7 @@ MonoBehaviour:
   points:
   - {x: 0, y: 0, z: 0}
   - {x: 3, y: 0, z: 3}
-  - {x: 0, y: 0, z: 0}
+  - {x: 3.2104292, y: 3, z: 5.7723866}
 --- !u!114 &4112750893849059720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c178b6c351e260049b11d332f8b48006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabed: 0
 --- !u!1 &2605022023021957347
 GameObject:
   m_ObjectHideFlags: 0
