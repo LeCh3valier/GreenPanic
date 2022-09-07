@@ -5,7 +5,7 @@ using UnityEngine;
 public class Engine : Items
 {
     [SerializeField]
-    private Banana mySlot = null;
+    private Items finalProduct = null;
 
     [SerializeField]
     private float craftingTime = 5.0f;
@@ -27,24 +27,27 @@ public class Engine : Items
             if (remainingTime < 0.0f)
             {
                 Debug.Log("cooked !");
+
                 produce = false;
+
+                Instantiate(finalProduct, transform.position + new Vector3(1.0f, 0.0f, 0.0f), transform.rotation);
             }
             else
             {
                 remainingTime -= Time.deltaTime;
-                Debug.Log("remaining tim : " + remainingTime);
+                //Debug.Log("remaining tim : " + remainingTime);
             }
         }
     }
 
-    public override Banana DoSomething(Banana slot)
+    public override Grabable DoSomething(Grabable slot)
     {
         if (slot != null && !produce)
         {
             Debug.Log("Strat cooking");
             produce = true;
             remainingTime = craftingTime;
-            Destroy(slot);
+            Destroy(slot.gameObject);
             return null;
         }
         else

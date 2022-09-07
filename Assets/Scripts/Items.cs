@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    public virtual Banana DoSomething(Banana banana) 
+    public virtual Grabable DoSomething(Grabable Pslot) 
     {
         return null;
     }

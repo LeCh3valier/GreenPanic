@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6505669059969561606}
   - component: {fileID: 3210745942763438487}
+  - component: {fileID: 4112750893849059720}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Interactable
@@ -42,15 +43,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2601035955551097476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc3292dd2b8fb04aab51220a7bd9c21, type: 3}
+  m_Script: {fileID: 11500000, guid: 100ef7d70ad4ff145bbaaa815337dc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grabed: 0
-  moveSpeed: 0.01
+  moveSpeed: 0.1
   points:
   - {x: 0, y: 0, z: 0}
-  - {x: 3, y: 3, z: 3}
+  - {x: 3, y: 0, z: 3}
   - {x: 0, y: 0, z: 0}
+--- !u!114 &4112750893849059720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2601035955551097476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c178b6c351e260049b11d332f8b48006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2605022023021957347
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +126,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3dd5a21b26cde174a965e87fa3876af8, type: 2}
+  - {fileID: 2100000, guid: af26d261d2d2d1c408f5e1243a3524b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private float grabRange = 2.0f;
 
     [SerializeField]
-    private Banana slot = null;
+    private Grabable slot = null;
 
     //Custom inputs
     private string interactButton = "Interact";
@@ -53,16 +53,21 @@ public class Player : MonoBehaviour
 
             if (found != null)
             {
-                Debug.Log(found.name + " found");
+                Debug.Log(found.name + " used");
 
                 slot = found.GetComponent<Items>().DoSomething(slot);
 
                 //Grab if banana
-                if(slot != null && slot.GetType() == typeof(Banana))
+                if (slot != null && slot.GetComponents<Grabable>() != null)
                 {
+                    Debug.Log("grabed : " + found.name);
+
                     Collider bananaCollider = slot.GetComponentInChildren<Collider>();
-                    bananaCollider.enabled = false;
-                    slot.transform.parent = this.transform;
+                    if (bananaCollider != null)
+                    {
+                        bananaCollider.enabled = false;
+                        slot.transform.parent = this.transform;
+                    }
                 }
             }
         }

@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Banana : Items
+public class Banana : Grabable
 {
-    [SerializeField]
-    private bool grabed = false;
-
-    private bool Transformed = false;
-
     [SerializeField]
     private float moveSpeed = 0.1f;
 
@@ -16,7 +11,7 @@ public class Banana : Items
     private Vector3[] points;
     private int indexPoint = 0;
 
-    public override Banana DoSomething(Banana slot)
+    public override Grabable DoSomething(Grabable slot)
     {
         grabed = true;
 
