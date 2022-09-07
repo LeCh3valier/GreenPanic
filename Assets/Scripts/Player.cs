@@ -5,9 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 1.0f;
-
-    [SerializeField]
     private bool player2 = false;
 
     [SerializeField]
@@ -18,11 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Banana slot = null;
 
-    private Rigidbody rb = null;
-
     //Custom inputs
-    private string verticalAxis = "Vertical";
-    private string horizontalAxis = "Horizontal";
     private string interactButton = "Interact";
 
     // Start is called before the first frame update
@@ -30,29 +23,14 @@ public class Player : MonoBehaviour
     {
         if(player2)
         {
-            verticalAxis += "_2";
-            horizontalAxis += "_2";
             interactButton += "_2";
         }
-
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Move
-        /*float mH = Input.GetAxis(horizontalAxis);
-        float mV = Input.GetAxis(verticalAxis);
-        rb.velocity = new Vector3(mH * moveSpeed, rb.velocity.y, mV * moveSpeed);
-
-        // Turn
-        if(rb.velocity != Vector3.zero)
-        {
-            transform.forward = rb.velocity;
-        }*/
-
-        // Find or not one interactable object in scene
+        // Interaction
         if (Input.GetButton(interactButton))
         {
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Interactable");
@@ -65,21 +43,27 @@ public class Player : MonoBehaviour
                 float range = (go.transform.position - transform.position).magnitude;
 
                 if (range < minRange &&
-                    Vector3.Angle(transform.forward, go.transform.position - transform.position) < angle)
+                    Vector3.Angle(transform.forward, go.transform.position - transform.position) < angle
+                    && go != slot)
                 {
                     found = go;
                     minRange = range;
                 }
             }
 
-            if (found == null)
-                return;
-                //Debug.Log("nothing grabed");
-            else
+            if (found != null)
             {
                 Debug.Log(found.name + " found");
 
                 slot = found.GetComponent<Items>().DoSomething(slot);
+
+                //Grab if banana
+                if(slot != null && slot.GetType() == typeof(Banana))
+                {
+                    Collider bananaCollider = slot.GetComponentInChildren<Collider>();
+                    bananaCollider.enabled = false;
+                    slot.transform.parent = this.transform;
+                }
             }
         }
     }

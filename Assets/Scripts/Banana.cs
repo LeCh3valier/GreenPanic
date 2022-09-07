@@ -22,14 +22,10 @@ public class Banana : Items
 
         if (slot == null)
         {
-           return this;
+            return this;
         }
         else
-        {
-            Banana toUngrab = slot;
-            slot = this;
-            return slot;
-        }
+            return null;
     }
 
     private void Update()
