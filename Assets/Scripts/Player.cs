@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     //Custom inputs
     private string interactButton = "Interact";
 
+    private BoxCollider bc = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class Player : MonoBehaviour
         {
             interactButton += "_2";
         }
+
+        bc = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -33,21 +37,19 @@ public class Player : MonoBehaviour
         // Interaction
         if (Input.GetButton(interactButton))
         {
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Interactable");
+            Collider[] colliders = Physics.OverlapBox(bc.transform.position, bc.transform.localScale);
+
+            //GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Interactable");
             GameObject found = null;
 
-            float minRange = grabRange;
-
-            foreach (GameObject go in gameObjects)
+            foreach (Collider co in colliders)
             {
-                float range = (go.transform.position - transform.position).magnitude;
-
-                if (range < minRange &&
-                    Vector3.Angle(transform.forward, go.transform.position - transform.position) < angle
-                    && go != slot)
+                if (
+                    co != slot
+                    && co.gameObject.tag == "Interactable"
+                    )
                 {
-                    found = go;
-                    minRange = range;
+                    found = co.gameObject;
                 }
             }
 
