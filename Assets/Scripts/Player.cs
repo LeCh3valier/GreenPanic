@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Move
-        float mH = Input.GetAxis(horizontalAxis);
+        /*float mH = Input.GetAxis(horizontalAxis);
         float mV = Input.GetAxis(verticalAxis);
         rb.velocity = new Vector3(mH * moveSpeed, rb.velocity.y, mV * moveSpeed);
 
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         if(rb.velocity != Vector3.zero)
         {
             transform.forward = rb.velocity;
-        }
+        }*/
 
         // Find or not one interactable object in scene
         if (Input.GetButton(interactButton))
