@@ -7,6 +7,8 @@ public class Banana : Items
     [SerializeField]
     private bool grabed = false;
 
+    private bool Transformed = false;
+
     [SerializeField]
     private float moveSpeed = 0.1f;
 
@@ -14,10 +16,20 @@ public class Banana : Items
     private Vector3[] points;
     private int indexPoint = 0;
 
-    public override void DoSomething()
+    public override Banana DoSomething(Banana slot)
     {
         grabed = true;
-        //Debug.Log("grabed");
+
+        if (slot == null)
+        {
+           return this;
+        }
+        else
+        {
+            Banana toUngrab = slot;
+            slot = this;
+            return slot;
+        }
     }
 
     private void Update()

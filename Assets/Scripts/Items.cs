@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    public virtual void DoSomething() { }
+    public virtual Banana DoSomething(Banana banana) 
+    {
+        return null;
+    }
 }

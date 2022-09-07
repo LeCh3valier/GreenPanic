@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class machine : Items
 {
-    public override void DoSomething()
+    public override Banana DoSomething(Banana slot)
     {
         Debug.Log("Machine used !");
+        return null;
     }
 }

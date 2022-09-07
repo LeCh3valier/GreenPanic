@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float grabRange = 2.0f;
 
+    [SerializeField]
+    private Banana slot = null;
+
     private Rigidbody rb = null;
 
     //Custom inputs
@@ -76,7 +79,7 @@ public class Player : MonoBehaviour
             {
                 Debug.Log(found.name + " found");
 
-                found.GetComponent<Items>().DoSomething();
+                slot = found.GetComponent<Items>().DoSomething(slot);
             }
         }
     }
