@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8588460915090042431}
   - component: {fileID: 686758680839127331}
   - component: {fileID: 2673721879235263784}
+  - component: {fileID: 1771268904}
+  - component: {fileID: 1771268911}
   m_Layer: 0
   m_Name: "Mati\xE8re premi\xE8re"
   m_TagString: Interactable
@@ -112,8 +114,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Script_ref","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Component,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Rigidbody_ref","value":{"$content":1,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Component,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 1771268904}
+    - {fileID: 1771268911}
 --- !u!114 &2673721879235263784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +136,36 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 972ca8aee7e57e942b482edd6942410a, type: 2}
+--- !u!114 &1771268904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588460915090042430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100ef7d70ad4ff145bbaaa815337dc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabed: 0
+  moveSpeed: 1
+  points:
+  - {x: 0, y: 0, z: 0}
+  - {x: 2, y: 0, z: 3}
+--- !u!54 &1771268911
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588460915090042430}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
