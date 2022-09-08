@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    GameObject banana = null;
+    GameObject[] toCraft;
 
     [SerializeField]
     private float spawnDelay = 1.0f;
@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
     private void SpawnObject()
     {
         // Make spawn
-        Instantiate(banana, transform.position, transform.rotation);
+        Instantiate(toCraft[(int)Random.Range(0, toCraft.Length)], transform.position, transform.rotation);
 
         // Faster
         if (accelerationTimer > accelerationDelay)
