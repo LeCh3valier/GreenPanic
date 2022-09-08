@@ -18,5 +18,11 @@ public class Pause : MonoBehaviour
 
         if (Input.GetButton("PauseButton_2"))
             Debug.Log("pause 2");
+
+        if (Input.GetButton("Interact"))
+            Debug.Log("Interact");
+        
+        if (Input.GetButton("Interact_2"))
+            Debug.Log("Interact_2");
     }
 }
