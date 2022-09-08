@@ -10,6 +10,8 @@ TagManager:
   - Machine_P1
   - Machine_P2
   - Slow
+  - Exp_Zone
+  - Transformed
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Transformed
   - 
   - 
   - 
