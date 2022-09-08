@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1694227d-668f-424d-98b5-ad2fc230d61b}">
+		<property name="assetPath">
+			<value>Sd/Machine/UGrd_Mach_Fl_02v2-002.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9612a51d-983c-4811-b2a4-a99af7cf7bc1}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{12661c14-60e7-44c5-a567-6d49d8b03d43}">
+		<property name="assetPath">
+			<value>Sd/Ui/Win FireWOrksv2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9612a51d-983c-4811-b2a4-a99af7cf7bc1}</destination>
+		</relationship>
+	</object>
+</objects>
