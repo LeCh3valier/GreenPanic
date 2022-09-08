@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44966537, g: 0.499735, b: 0.5756484, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -300,14 +300,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365435108}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.28170097, y: 0.4501451, z: -0.20133628, w: 0.8230904}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.165, y: 55.21, z: -5.845}
 --- !u!1001 &365446448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -413,7 +413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f914fcc7dbb24e42a3d761b39961ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  banana: {fileID: 8588460915090042430, guid: 50a6a774a673482418b92c6c5063f135, type: 3}
+  toCraft:
+  - {fileID: 8588460915090042430, guid: cd99f2e840e83644593397fd0d541c8a, type: 3}
+  - {fileID: 8588460915090042430, guid: 50a6a774a673482418b92c6c5063f135, type: 3}
+  - {fileID: 8588460915090042430, guid: df6bce8573cb05047a6dbc263a815c00, type: 3}
+  - {fileID: 8588460915090042430, guid: 9558a0d36ed33d741a8e0191dafa245b, type: 3}
   spawnDelay: 1
   accelerationDelay: 30
   accelerationValue: 1
