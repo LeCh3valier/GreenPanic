@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7877213337226315812
 Transform:
   m_ObjectHideFlags: 0
@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4421822228174921210, guid: 9ebe8985332c12e4ab73a4cd73b7f57b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b8c4e9a05666aab42b23796a87bfd23e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ebe8985332c12e4ab73a4cd73b7f57b, type: 3}
 --- !u!4 &8022814719312034101 stripped
@@ -166,6 +170,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7877213337226315812}
     m_Modifications:
+    - target: {fileID: 7526756831159124290, guid: 658c43cd96900e24bafe1c5be0b96844, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b8c4e9a05666aab42b23796a87bfd23e, type: 2}
     - target: {fileID: 8319438263208353943, guid: 658c43cd96900e24bafe1c5be0b96844, type: 3}
       propertyPath: m_Name
       value: Chapeau
@@ -276,6 +284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottes
       objectReference: {fileID: 0}
+    - target: {fileID: 8604053477406599321, guid: 07454c2fcace86a4893ac2cb21df2764, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b8c4e9a05666aab42b23796a87bfd23e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07454c2fcace86a4893ac2cb21df2764, type: 3}
 --- !u!4 &1110698039866940023 stripped
