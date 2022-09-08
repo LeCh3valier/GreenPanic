@@ -9,6 +9,7 @@ public class Trash : MonoBehaviour
         if (other.gameObject.tag == "Interactable")
         {
             Destroy(other.gameObject);
+            //Spaw trash
         }
     }
 }

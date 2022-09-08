@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabed: 0
-  moveSpeed: 0.1
+  moveSpeed: 1
   points:
   - {x: 0, y: 0, z: 0}
   - {x: 3, y: 0, z: 3}

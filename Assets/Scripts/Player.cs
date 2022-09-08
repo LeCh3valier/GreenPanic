@@ -12,33 +12,33 @@ public class Player : MonoBehaviour
     //[SerializeField]
     //private float grabRange = 2.0f;
 
-    [SerializeField]
-    private Grabable slot = null;
+    //[SerializeField]
+    //private Grabable slot = null;
 
-    [SerializeField]
-    private GameObject grabPoint;
+    //[SerializeField]
+    //private GameObject grabPoint;
 
     //Custom inputs
-    private string interactButton = "Interact";
+    //private string interactButton = "Interact";
 
-    private BoxCollider bc = null;
+    //private BoxCollider bc = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(player2)
-        {
-            interactButton += "_2";
-        }
-
-        bc = GetComponent<BoxCollider>();
+        //if(player2)
+        //{
+        //    interactButton += "_2";
+        //}
+        //
+        //bc = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Interaction
-        if (Input.GetButton(interactButton))
+        /*if (Input.GetButton(interactButton))
         {
             Collider[] colliders = Physics.OverlapBox(bc.transform.position, bc.transform.localScale);
 
@@ -76,11 +76,12 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
     }
 
     public void RedButtonWin()
     {
-        Debug.Log(this.name + "wallked on the red button at first");
+        Debug.Log(this.name + "walked on the red button first");
+        // do redButton win consequences
     }
 }

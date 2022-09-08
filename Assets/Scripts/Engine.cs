@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class Engine : Items
 {
-    [SerializeField]
-    private Items finalProduct = null;
+    //[SerializeField]
+    //private Items finalProduct = null;
 
-    [SerializeField]
-    private float craftingTime = 5.0f;
+    //[SerializeField]
+    //private float craftingTime = 5.0f;
 
-    private float remainingTime = -1.0f;
-    private bool produce = false;
+    //private float remainingTime = -1.0f;
+    //private bool produce = false;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (produce)
+        /*if (produce)
         {
             if (remainingTime < 0.0f)
             {
@@ -37,10 +33,10 @@ public class Engine : Items
                 remainingTime -= Time.deltaTime;
                 //Debug.Log("remaining tim : " + remainingTime);
             }
-        }
+        }*/
     }
 
-    public override Grabable DoSomething(Grabable slot)
+    /*public override Grabable DoSomething(Grabable slot)
     {
         if (slot != null && !produce)
         {
@@ -52,6 +48,6 @@ public class Engine : Items
         }
         else
             return slot;
-    }
+    }*/
 }
 
