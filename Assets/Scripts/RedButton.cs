@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD;
 
 public class RedButton : MonoBehaviour
 {
+
+    FMODUnity.StudioEventEmitter emitter;
+    private float soundState = 0.0f;
+
     [SerializeField]
     private float minTime = 30.0f;
     [SerializeField]
@@ -20,6 +25,8 @@ public class RedButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+
         bc = GetComponent<BoxCollider>();
         mr = GetComponent<MeshRenderer>();
 
@@ -33,8 +40,9 @@ public class RedButton : MonoBehaviour
     {
         bc.enabled = true;
         mr.enabled = true;
-        
+
         // Do red button fxs and play music
+        emitter.Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +55,7 @@ public class RedButton : MonoBehaviour
             mr.enabled = false;
 
             // stop red button music and fxs
+            emitter.Stop();
         }
     }
 }

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+
+
+    [SerializeField]
+    private GameObject soundObj = null;
+
+
+
     [SerializeField]
     GameObject[] toCraft;
 
@@ -37,6 +44,8 @@ public class Spawner : MonoBehaviour
     {
         // Make spawn
         Instantiate(toCraft[(int)Random.Range(0, toCraft.Length)], transform.position, transform.rotation);
+
+        Instantiate(soundObj, transform.position, transform.rotation);
 
         // Faster
         if (accelerationTimer > accelerationDelay)

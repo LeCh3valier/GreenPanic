@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private bool player2 = false;
+    //[SerializeField]
+    //private bool player2 = false;
 
     //[SerializeField]
     //private float angle = 45.0f;

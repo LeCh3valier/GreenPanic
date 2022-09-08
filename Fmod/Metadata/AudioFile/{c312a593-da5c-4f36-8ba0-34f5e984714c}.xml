@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c312a593-da5c-4f36-8ba0-34f5e984714c}">
+		<property name="assetPath">
+			<value>Sd/Player/Foostep_ly2_02v2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9612a51d-983c-4811-b2a4-a99af7cf7bc1}</destination>
+		</relationship>
+	</object>
+</objects>
