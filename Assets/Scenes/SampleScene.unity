@@ -123,6 +123,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &202744169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6553137816816912865, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_Name
+      value: BananaSPawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553584159400414901, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912776868362690084, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8035325608421475000, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: banana
+      value: 
+      objectReference: {fileID: 2601035955551097476, guid: 7d5a281275e877d47be2f3bcdd275b00, type: 3}
+    - target: {fileID: 8035325608421475000, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
+      propertyPath: accelerationDelay
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bd70efbe5b5a2e47a931d2128b6d0ad, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e959b58bea5a4478f3741146372c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalProduct: {fileID: 4377449888756305271, guid: 5b82d606b94c05b4db6dc43b049a38f3, type: 3}
-  craftingTime: 5
 --- !u!1 &786423629
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,8 +950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player2: 0
-  slot: {fileID: 0}
-  grabPoint: {fileID: 0}
 --- !u!1 &1602173595
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,14 +977,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602173595}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f914fcc7dbb24e42a3d761b39961ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   banana: {fileID: 2601035955551097476, guid: 7d5a281275e877d47be2f3bcdd275b00, type: 3}
-  spawnDelay: 100
-  spawnTime: 1
+  spawnDelay: 10
+  accelerationDelay: 1
+  accelerationValue: 1
 --- !u!136 &1602173597
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -992,7 +1058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602173595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.79, y: 0.67, z: -4.1}
+  m_LocalPosition: {x: 1.79, y: 0.67, z: -9.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

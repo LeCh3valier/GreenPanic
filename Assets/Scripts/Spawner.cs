@@ -9,22 +9,46 @@ public class Spawner : MonoBehaviour
 
     [SerializeField]
     private float spawnDelay = 1.0f;
-    [SerializeField]
-    private float spawnTime = 1.0f;
 
-    private bool spawning = true;
+    [SerializeField]
+    private float accelerationDelay = 30.0f;
+    [SerializeField]
+    private float accelerationValue = 1.0f;
+    [SerializeField]
+    private float minDelay = 1.0f;
+
+    private float accelerationTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
+        InvokeRepeating("SpawnObject", spawnDelay, spawnDelay);
+
+        accelerationTimer = 0.0f;
+    }
+
+    private void Update()
+    {
+        accelerationTimer += Time.deltaTime;
     }
 
     // Update is called once per frame
     private void SpawnObject()
     {
+        // Make spawn
         Instantiate(banana, transform.position, transform.rotation);
-        if (!spawning)
+
+        // Faster
+        if (accelerationTimer > accelerationDelay)
+        {
+            accelerationTimer = 0.0f;
+
+            spawnDelay -= accelerationValue;
+            if (spawnDelay < minDelay)
+                spawnDelay = minDelay;
+
             CancelInvoke("SpawnObject");
+            InvokeRepeating("SpawnObject", spawnDelay, spawnDelay);
+        }
     }
 }
