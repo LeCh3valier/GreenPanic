@@ -7,9 +7,9 @@ public class Grabable : Items
     [SerializeField]
     protected bool grabed = false;
 
-    public override Grabable DoSomething(Grabable slot)
+    /*public override Grabable DoSomething(Grabable slot)
     {
-        grabed = true;
+        //grabed = true;
 
         if (slot == null)
         {
@@ -17,5 +17,5 @@ public class Grabable : Items
         }
         else
             return null;
-    }
+}*/
 }

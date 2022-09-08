@@ -11,7 +11,7 @@ public class Banana : Grabable
     private Vector3[] points;
     private int indexPoint = 0;
 
-    public override Grabable DoSomething(Grabable slot)
+    /*public override Grabable DoSomething(Grabable slot)
     {
         grabed = true;
 
@@ -21,24 +21,25 @@ public class Banana : Grabable
         }
         else
             return null;
-    }
+    }*/
 
     private void Update()
     {
         if (!grabed)
         {
+            // never go here
             if (indexPoint >= points.Length)
             {
                 //Debug.Log("finished");
                 return;
             }
             
-            transform.position += (points[indexPoint] - transform.position).normalized * moveSpeed;
+            transform.position += (points[indexPoint] - transform.position).normalized * moveSpeed * Time.deltaTime;
 
+            // reach a checkpoint
             if ((transform.position - points[indexPoint]).magnitude < 0.1f)
             {
                 //Debug.Log("point reached" + indexPoint);
-
                 indexPoint++;
             }
         }
