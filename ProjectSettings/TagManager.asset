@@ -7,11 +7,10 @@ TagManager:
   - Interactable
   - Trash
   - Object_1
-  - Machine_P1
-  - Machine_P2
   - Slow
   - Exp_Zone
   - Transformed
+  - Interactable P2
   layers:
   - Default
   - TransparentFX
