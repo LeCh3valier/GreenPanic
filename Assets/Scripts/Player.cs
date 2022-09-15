@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector2 Padthrehold = new Vector3(0.5f, 0.5f);
 
-    private Grabable slot = null;
+    //private Grabable slot = null;
 
     [SerializeField]
     private GameObject grabPoint;

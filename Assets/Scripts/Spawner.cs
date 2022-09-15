@@ -5,7 +5,9 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] toCraft;
+    private GameObject[] toCraft;
+    [SerializeField]
+    private GameObject[] checkPoints;
 
     [SerializeField]
     private float spawnDelay = 1.0f;
@@ -36,7 +38,9 @@ public class Spawner : MonoBehaviour
     private void SpawnObject()
     {
         // Make spawn
-        Instantiate(toCraft[(int)Random.Range(0, toCraft.Length)], transform.position, transform.rotation);
+        GameObject go = Instantiate(toCraft[(int)Random.Range(0, toCraft.Length)], transform.position, transform.rotation);
+        // Weak
+        go.GetComponent<ConveyorMovement>().checkPoints = checkPoints;
 
         // Faster
         if (accelerationTimer > accelerationDelay)

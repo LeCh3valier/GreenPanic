@@ -538,6 +538,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44293468}
   m_Mesh: {fileID: 991503290360816269, guid: 2f2f54ae5b8a2f84f96fe46d64a0cfae, type: 3}
+--- !u!1 &80674784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 80674785}
+  m_Layer: 0
+  m_Name: CheckPoint_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &80674785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80674784}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.6, y: -3.5, z: 8.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 682791596}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &91390950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,7 +2730,7 @@ PrefabInstance:
     - target: {fileID: 5089471555316241703, guid: 3f6a4fc9f778d2046a92e1969d3d9837, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 40f44b8687aaf0c48b3100778e94f22a, type: 2}
+      objectReference: {fileID: -9103484930961366303, guid: 55534b674e1ad4e9988d9be64c8ed52a, type: 3}
     - target: {fileID: 5866666020301565648, guid: 3f6a4fc9f778d2046a92e1969d3d9837, type: 3}
       propertyPath: m_UpdateMode
       value: 0
@@ -3637,6 +3668,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501386886}
   m_Mesh: {fileID: -2797914723452963376, guid: f25ba472a6955a341a8355245360fa7d, type: 3}
+--- !u!1 &514861561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514861562}
+  m_Layer: 0
+  m_Name: CheckPoint_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514861562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514861561}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.5, y: -3.5, z: 13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 682791596}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &528277248
 GameObject:
   m_ObjectHideFlags: 0
@@ -4214,6 +4276,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630560489}
   m_Mesh: {fileID: 2738566855109692197, guid: f1aebcec97faf4f40a09fd7f39fa4d33, type: 3}
+--- !u!1 &631973843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 631973845}
+  - component: {fileID: 631973844}
+  m_Layer: 0
+  m_Name: RightSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &631973844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631973843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f914fcc7dbb24e42a3d761b39961ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toCraft:
+  - {fileID: 8754000333959161492, guid: ebdb787266a1e5b4a8792bdc52fac7ce, type: 3}
+  - {fileID: 8754000333959161492, guid: 03c740f3af7811546a8ed86c7f0923e0, type: 3}
+  - {fileID: 8754000333959161492, guid: ffdb31f60caf6ca43bd656a92be3a953, type: 3}
+  - {fileID: 8754000333959161492, guid: b82e51907c0cf2445b3a6bf1d09d2290, type: 3}
+  checkPoints:
+  - {fileID: 80674784}
+  - {fileID: 1320318143}
+  - {fileID: 514861561}
+  spawnDelay: 1
+  accelerationDelay: 30
+  accelerationValue: 1
+  minDelay: 1
+--- !u!4 &631973845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631973843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9, y: -3.5, z: 8.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &643268332
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,6 +4593,40 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &682791595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682791596}
+  m_Layer: 0
+  m_Name: CheckPoints_Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &682791596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682791595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 80674785}
+  - {fileID: 1320318144}
+  - {fileID: 514861562}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696569357
 GameObject:
   m_ObjectHideFlags: 0
@@ -7965,6 +8118,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303281930}
   m_Mesh: {fileID: -3191526996811961001, guid: 7edf8ebcd3d28b744b2affa5b95c2ad2, type: 3}
+--- !u!1 &1320318143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320318144}
+  m_Layer: 0
+  m_Name: CheckPoint_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320318144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320318143}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.079, y: -3.5, z: 13.155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 682791596}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325790556
 GameObject:
   m_ObjectHideFlags: 0
@@ -11765,7 +11949,7 @@ GameObject:
   - component: {fileID: 1796928896}
   - component: {fileID: 1796928895}
   m_Layer: 0
-  m_Name: RightSpawn
+  m_Name: LeftSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11784,7 +11968,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toCraft:
-  - {fileID: 0}
+  - {fileID: 8754000333959161492, guid: ebdb787266a1e5b4a8792bdc52fac7ce, type: 3}
+  - {fileID: 8754000333959161492, guid: 03c740f3af7811546a8ed86c7f0923e0, type: 3}
+  - {fileID: 8754000333959161492, guid: ffdb31f60caf6ca43bd656a92be3a953, type: 3}
+  - {fileID: 8754000333959161492, guid: b82e51907c0cf2445b3a6bf1d09d2290, type: 3}
+  checkPoints:
+  - {fileID: 80674784}
+  - {fileID: 1320318143}
+  - {fileID: 514861561}
   spawnDelay: 1
   accelerationDelay: 30
   accelerationValue: 1
@@ -11797,7 +11988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796928894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.92, y: -3.2364202, z: 8.33}
+  m_LocalPosition: {x: 9, y: -3.5, z: 8.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

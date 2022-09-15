@@ -8,8 +8,8 @@ public class WinZone : MonoBehaviour
     [SerializeField]
     private GameObject Wagon = null;
 
-    [SerializeField]
-    private bool player1 = true;
+    //[SerializeField]
+    //private bool player1 = true;
 
     private void OnTriggerEnter(Collider other)
     {
