@@ -8,7 +8,12 @@ public class Player : MonoBehaviour
     private bool player2 = false;
 
     [SerializeField]
-    private float moveSpeed = 1.0f;
+    public float moveSpeed = 1.0f;
+
+    [SerializeField]
+    public float minMoveSpeed = 0.1f;
+    //[HideInInspector]
+    public float currentSpeed = 1.0f;
 
     [SerializeField]
     private Vector2 Padthrehold = new Vector3(0.5f, 0.5f);
@@ -38,6 +43,8 @@ public class Player : MonoBehaviour
 
         rigidBody = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+
+        currentSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -73,7 +80,7 @@ public class Player : MonoBehaviour
                 animator.SetBool("Run", false);
 
         // Move
-        rigidBody.velocity = new Vector3(moveSpeed * moveX, 0.0f, moveSpeed * moveY);
+        rigidBody.velocity = new Vector3(currentSpeed * moveX, 0.0f, currentSpeed * moveY);
 
         // Set forward
         if (rigidBody.velocity != Vector3.zero)
@@ -122,13 +129,5 @@ public class Player : MonoBehaviour
                }
            }
        }*/
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetType() == typeof(Items))
-        {
-
-        }
     }
 }
