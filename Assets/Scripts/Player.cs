@@ -14,13 +14,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     public float minMoveSpeed = 0.1f;
     public float currentSpeed = 1.0f;
-
     [SerializeField]
     private Vector2 sensitivityThreshold = new Vector3(0.5f, 0.5f);
 
+    // Interact system
     private GameObject slot = null;
     private GameObject inside = null;
-
     [SerializeField]
     private GameObject grabPoint;
 
@@ -29,6 +28,7 @@ public class Player : MonoBehaviour
     private string hAxis = "Horizontal";
     private string vAxis = "Vertical";
 
+    // Components
     private Rigidbody rigidBody = null;
     private Animator animator = null;
 
@@ -52,7 +52,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
-
         Interact();
     }
 
