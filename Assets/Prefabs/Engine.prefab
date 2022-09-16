@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e959b58bea5a4478f3741146372c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalProduct: {fileID: 9094413490061226719, guid: ebdb787266a1e5b4a8792bdc52fac7ce, type: 3}
+  finalProduct: {fileID: 4999800487023662655, guid: 5b82d606b94c05b4db6dc43b049a38f3, type: 3}
   craftingTime: 5
   cookingPlace: {fileID: 5195229567047058056}
 --- !u!1 &5195229567047058056
