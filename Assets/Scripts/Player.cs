@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Side
     [SerializeField]
     private bool player2 = false;
 
+    // Move
     [SerializeField]
     public float moveSpeed = 1.0f;
-
     [SerializeField]
     public float minMoveSpeed = 0.1f;
-    //[HideInInspector]
     public float currentSpeed = 1.0f;
 
     [SerializeField]
-    private Vector2 Padthrehold = new Vector3(0.5f, 0.5f);
+    private Vector2 sensitivityThreshold = new Vector3(0.5f, 0.5f);
 
-    //private Grabable slot = null;
+    private GameObject slot = null;
+    private GameObject inside = null;
 
     [SerializeField]
     private GameObject grabPoint;
@@ -55,25 +56,19 @@ public class Player : MonoBehaviour
         Interact();
     }
 
-    public void RedButtonWin()
-    {
-        Debug.Log(this.name + "walked on the red button first");
-        // do redButton win consequences
-    }
-
     private void Move()
     {
         // Get imputs
         float moveY = Input.GetAxisRaw(hAxis);
-        if (Mathf.Abs(moveY) < Padthrehold.y)
+        if (Mathf.Abs(moveY) < sensitivityThreshold.y)
             moveY = 0.0f;
 
         float moveX = Input.GetAxisRaw(vAxis);
-        if (Mathf.Abs(moveX) < Padthrehold.x)
+        if (Mathf.Abs(moveX) < sensitivityThreshold.x)
             moveX = 0.0f;
 
         // Set animation
-        if (animator != null )
+        if (animator != null)
             if(rigidBody.velocity != Vector3.zero)
                 animator.SetBool("Run", true);
             else
@@ -83,51 +78,56 @@ public class Player : MonoBehaviour
         rigidBody.velocity = new Vector3(currentSpeed * moveX, 0.0f, currentSpeed * moveY);
 
         // Set forward
-        if (rigidBody.velocity != Vector3.zero)
+        if (rigidBody.velocity.magnitude > 0.1f)
         {
             gameObject.transform.forward = rigidBody.velocity;
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Interactable")
+        {
+            inside = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Interactable")
+        {
+            inside = null;
+        }
+    }
+
     private void Interact()
     {
-        /*
-       // Interaction
-       if (Input.GetButton(interactButton))
-       {
-           GameObject found = null;
+        if (Input.GetButton(interactButton))
+        {
+            // If Something
+            if (inside == null)
+                return;
 
-           foreach (Collider co in colliders)
-           {
-               if (
-                   co != slot
-                   && co.gameObject.tag == "Interactable"
-                   )
-               {
-                   found = co.gameObject;
-               }
-           }
+            // If items
+            Items item = inside.GetComponent<Items>();
+            if (item == null)
+                return;
+            Debug.Log(item.name + " used");
+            item.DoSomething(slot);
 
-           if (found != null)
-           {
-               Debug.Log(found.name + " used");
+            // If grabable
+            Grabable grabable = inside.GetComponent<Grabable>();
+            if (grabable != null)
+            {
+                if (slot == null)
+                {
+                    inside.transform.parent = this.transform;
+                    inside.transform.position = grabPoint.transform.position;
 
-               slot = found.GetComponent<Items>().DoSomething(slot);
-
-               //Grab if banana
-               if (slot != null && slot.GetComponents<Grabable>() != null)
-               {
-                   Debug.Log("grabed : " + found.name);
-
-                   Collider bananaCollider = slot.GetComponentInChildren<Collider>();
-                   if (bananaCollider != null)
-                   {
-                       bananaCollider.enabled = false;
-                       slot.transform.parent = this.transform;
-                       slot.transform.position = grabPoint.transform.position;
-                   }
-               }
-           }
-       }*/
+                    slot = inside;
+                }
+            }
+            inside = null;
+        }
     }
 }

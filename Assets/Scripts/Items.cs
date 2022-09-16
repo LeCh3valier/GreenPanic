@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    public virtual Grabable DoSomething(Grabable Pslot) 
+    public virtual void DoSomething(GameObject PlayerSlot) 
     {
-        return null;
+        return;
     }
 }

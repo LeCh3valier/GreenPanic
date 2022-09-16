@@ -7,15 +7,14 @@ public class Grabable : Items
     [SerializeField]
     protected bool grabed = false;
 
-    /*public override Grabable DoSomething(Grabable slot)
+    public override void DoSomething(GameObject playerSlot)
     {
-        //grabed = true;
-
-        if (slot == null)
+        if(playerSlot == null)
         {
-            return this;
+            grabed = true;
+
+            // Disable collider
+            GetComponent<Collider>().enabled = false;
         }
-        else
-            return null;
-}*/
+    }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trash : MonoBehaviour
+public class Trash : Items
 {
     [SerializeField]
     private GameObject Puddle = null;
@@ -16,6 +16,16 @@ public class Trash : MonoBehaviour
         {
             Destroy(other.gameObject);
 
+            int id = Random.Range(0, PuddlesZones.Length);
+            Instantiate(Puddle, PuddlesZones[id].transform.position, transform.rotation);
+        }
+    }
+
+    public override void DoSomething(GameObject playerSlot)
+    {
+        if (playerSlot != null)
+        {
+            Destroy(playerSlot);
             int id = Random.Range(0, PuddlesZones.Length);
             Instantiate(Puddle, PuddlesZones[id].transform.position, transform.rotation);
         }

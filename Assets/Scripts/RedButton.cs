@@ -41,7 +41,7 @@ public class RedButton : MonoBehaviour
     {
         if (other.GetComponent<Player>() != null)
         {
-            other.GetComponent<Player>().RedButtonWin();
+            //other.GetComponent<Player>().RedButtonWin();
 
             bc.enabled = false;
             mr.enabled = false;

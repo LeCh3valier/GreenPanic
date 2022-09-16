@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5713383168017296130}
-  - component: {fileID: 6154558972261076508}
-  - component: {fileID: 932525850404970251}
   - component: {fileID: 2596274278544833316}
   - component: {fileID: 7304157033225119228}
   - component: {fileID: 229012256086437315}
@@ -37,31 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6154558972261076508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8754000333959161492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c178b6c351e260049b11d332f8b48006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabed: 0
---- !u!114 &932525850404970251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8754000333959161492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8977729ed9875134ea2ea5ac70d0734e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2596274278544833316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,8 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fedc791b5943d14da1c623602e981f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabed: 0
-  moveSpeed: 10
+  moveSpeed: 1
   checkPoints: []
 --- !u!54 &7304157033225119228
 Rigidbody:
