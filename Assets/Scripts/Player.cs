@@ -118,6 +118,11 @@ public class Player : MonoBehaviour
             Grabable grabable = inside.GetComponent<Grabable>();
             if (grabable != null)
             {
+                FinalProduct fp = inside.GetComponent<FinalProduct>();
+                if (fp != null)
+                    if (fp.side != playerSide)
+                        return;
+
                 if (slot == null)
                 {
                     inside.transform.parent = this.transform;

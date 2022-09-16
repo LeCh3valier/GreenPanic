@@ -5,7 +5,14 @@ using UnityEngine;
 public class Engine : Items
 {
     [SerializeField]
-    private Items finalProduct = null;
+    private int life = 2;
+    private int currentLife = 2;
+
+    [SerializeField]
+    private bool side = false;
+
+    [SerializeField]
+    private FinalProduct finalProduct = null;
     
     [SerializeField]
     private float craftingTime = 5.0f;
@@ -16,6 +23,11 @@ public class Engine : Items
     private float remainingTime = -1.0f;
     private bool produce = false;
 
+    private void Start()
+    {
+        currentLife = life;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,21 +37,43 @@ public class Engine : Items
             {
                 produce = false;
 
-                Instantiate(finalProduct, cookingPlace.transform.position, transform.rotation);
+                FinalProduct fprod = Instantiate(finalProduct, cookingPlace.transform.position, transform.rotation);
+                fprod.GetComponent<FinalProduct>().side = side;
             }
-            else
+            else if(currentLife > 0)
                 remainingTime -= Time.deltaTime;
         }
     }
 
     public override void DoSomething(GameObject slot, bool playerSide)
     {
-        if (slot != null && !produce)
+        if (playerSide == side)
         {
-            produce = true;
-            remainingTime = craftingTime;
-            Destroy(slot.gameObject);
+            // Start cooking
+            if (slot != null && !produce && currentLife > 0)
+            {
+                produce = true;
+                remainingTime = craftingTime;
+                Destroy(slot.gameObject);
+            }
+            else if(currentLife < life)
+            {
+                currentLife++;
+            }
         }
+        else
+        {
+            // Knock off
+            if (slot == null)
+            {
+                currentLife--;
+                if (currentLife <= 0)
+                {
+                    Debug.Log("Knocked off !");
+                }
+            }
+        }
+
     }
 }
 
