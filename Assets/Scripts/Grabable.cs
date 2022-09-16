@@ -7,7 +7,7 @@ public class Grabable : Items
     [SerializeField]
     protected bool grabed = false;
 
-    public override void DoSomething(GameObject playerSlot)
+    public override void DoSomething(GameObject playerSlot, bool playerSide)
     {
         if(playerSlot == null)
         {

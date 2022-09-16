@@ -6,7 +6,7 @@ public class DeliveryZone : Items
 {
     private int gold = 0;
 
-    public override void DoSomething(GameObject slot)
+    public override void DoSomething(GameObject slot, bool playerSide)
     {
         if (slot == null)
             return;

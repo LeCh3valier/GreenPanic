@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // Side
     [SerializeField]
-    private bool player2 = false;
+    private bool playerSide = false;
 
     // Move
     [SerializeField]
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (player2)
+        if (playerSide)
         {
             interactButton += "_2";
             hAxis += "_2";
@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
             if (item == null)
                 return;
             Debug.Log(item.name + " used");
-            item.DoSomething(slot);
+            item.DoSomething(slot, playerSide);
 
             // If grabable
             Grabable grabable = inside.GetComponent<Grabable>();
