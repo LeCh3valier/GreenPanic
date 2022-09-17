@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // Side
     [SerializeField]
-    private bool playerSide = false;
+    public bool playerSide = false;
 
     // Move
     [SerializeField]

@@ -140,11 +140,11 @@ GameObject:
   - component: {fileID: 8399834117518619929}
   - component: {fileID: 8399834117518619930}
   - component: {fileID: 8399834117518619932}
-  - component: {fileID: 8399834117518619935}
   - component: {fileID: 1666398325}
+  - component: {fileID: 1413137271}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,10 +186,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8399834117518619932
 MonoBehaviour:
@@ -224,22 +224,6 @@ MonoBehaviour:
     - {fileID: 1668714196}
     - {fileID: 2091916985}
     - {fileID: 0}
---- !u!114 &8399834117518619935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8399834117518619925}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 74f3bac0f8f803e438de7c7f89101836, type: 2}
 --- !u!136 &1666398325
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -254,6 +238,24 @@ CapsuleCollider:
   m_Height: 2.4052415
   m_Direction: 1
   m_Center: {x: 0, y: 0.70262074, z: 0.010539293}
+--- !u!114 &1413137271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399834117518619925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52fe4b9e5e8f3048930ebd40582df4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSide: 1
+  moveSpeed: 8
+  minMoveSpeed: 1
+  currentSpeed: 1
+  sensitivityThreshold: {x: 1, y: 1}
+  grabPoint: {fileID: 2091916985}
 --- !u!1001 &1613583169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -305,6 +307,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4133900479925516698, guid: 2e837650087fd954c93def63ee2c56d8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -9103484930961366303, guid: 55534b674e1ad4e9988d9be64c8ed52a, type: 3}
     - target: {fileID: 919132149155446097, guid: 2e837650087fd954c93def63ee2c56d8, type: 3}
       propertyPath: m_Name
       value: polySurface96
@@ -313,6 +319,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: cc81875dbfde9814eb3b907e663c9cc9, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 2e837650087fd954c93def63ee2c56d8, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e837650087fd954c93def63ee2c56d8, type: 3}
 --- !u!4 &543450652086383786 stripped

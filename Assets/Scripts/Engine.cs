@@ -6,7 +6,8 @@ public class Engine : Items
 {
     [SerializeField]
     private int life = 2;
-    private int currentLife = 2;
+    [HideInInspector]
+    public int currentLife = 2;
 
     [SerializeField]
     private bool side = false;

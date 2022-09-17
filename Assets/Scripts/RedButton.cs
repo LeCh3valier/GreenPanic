@@ -14,39 +14,64 @@ public class RedButton : MonoBehaviour
     [SerializeField]
     private float initialMax = 60.0f;
 
-    private BoxCollider bc = null;
-    private MeshRenderer mr = null;
+    private BoxCollider[] boxColliders;
+    private MeshRenderer[] meshRenderers = null;
+
+    [SerializeField]
+    private Engine[] enginesP1;
+
+    [SerializeField]
+    private Engine[] enginesP2;
 
     // Start is called before the first frame update
     void Start()
     {
-        bc = GetComponent<BoxCollider>();
-        mr = GetComponent<MeshRenderer>();
+        boxColliders = GetComponentsInChildren<BoxCollider>();
+        meshRenderers = GetComponentsInChildren<MeshRenderer>();
 
-        bc.enabled = false;
-        mr.enabled = false;
+        foreach (BoxCollider collider in boxColliders)
+            collider.enabled = false;
+
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+            meshRenderer.enabled = false;
 
         InvokeRepeating("Warning", Random.Range(initialMin, initialMax), Random.Range(minTime, maxTime));
     }
 
     private void Warning()
     {
-        bc.enabled = true;
-        mr.enabled = true;
-        
+        foreach (BoxCollider collider in boxColliders)
+            collider.enabled = true;
+
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+            meshRenderer.enabled = true;
+
         // Do red button fxs and play music
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void WalkIn(bool playerSide)
     {
-        if (other.GetComponent<Player>() != null)
+        foreach (BoxCollider collider in boxColliders)
+            collider.enabled = false;
+
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+            meshRenderer.enabled = false;
+
+        // stop red button music and fxs
+
+        if (playerSide)
         {
-            //other.GetComponent<Player>().RedButtonWin();
+            Engine engine = enginesP2[Random.Range(0, enginesP2.Length)];
+            Debug.Log(engine + "Knocked off !");
 
-            bc.enabled = false;
-            mr.enabled = false;
+            engine.currentLife = 0;
+        }
+        else
+        {
+            Engine engine = enginesP1[Random.Range(0, enginesP1.Length)];
+            Debug.Log(engine + "Knocked off !");
 
-            // stop red button music and fxs
+            engine.currentLife = 0;
         }
     }
 }
